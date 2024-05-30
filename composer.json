@@ -1,0 +1,70 @@
+{
+  "name": "squidit/swow-event-dispatcher",
+  "description": "Basic PSR-14 compatible (but opinionated) event dispatcher for usage with swow coroutines",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "event",
+    "event dispatcher",
+    "PSR-14",
+    "psr14",
+    "coroutines",
+    "swow"
+  ],
+  "authors": [
+    {
+      "name": "Cecil Zorg",
+      "email": "developer@squidit.nl"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "SquidIT\\Event\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SquidIT\\Tests\\Event\\": "tests"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/squid-it/php-coding-standards.git"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "ext-ds": "*",
+    "psr/event-dispatcher": "^1.0",
+    "psr/log": "^3.0",
+    "squidit/container-mason": "^2.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.55",
+    "league/container": "^4.2",
+    "phpstan/phpstan": "^1.11",
+    "phpunit/phpunit": "^11.1",
+    "squidit/php-coding-standards": "^1.1",
+    "swow/swow": "^1.5.2"
+  },
+  "suggest": {
+    "ext-swow": "*"
+  },
+  "provide": {
+    "psr/event-dispatcher-implementation": "1.0"
+  },
+  "scripts": {
+    "check": "phpstan analyse -l 8 src tests",
+    "fix": "php-cs-fixer fix && phpstan analyse -l 8 src tests",
+    "test:unit-github-action": "php -d extension=swow vendor/bin/phpunit --testsuite unit",
+    "test:unit": "phpunit --testsuite unit",
+    "test:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --testsuite unit --coverage-text"
+    ]
+  }
+}
