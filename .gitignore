@@ -19,3 +19,4 @@ php_errors.log
 .env
 .env.test
 .env.daemon
+

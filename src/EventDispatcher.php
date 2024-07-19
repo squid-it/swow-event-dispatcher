@@ -12,6 +12,9 @@ use SquidIT\Event\Event\EventInterface;
 use SquidIT\Event\Listener\ListenerInterface;
 use Throwable;
 
+use function get_class;
+use function sprintf;
+
 readonly class EventDispatcher implements EventDispatcherInterface
 {
     public function __construct(
@@ -42,10 +45,10 @@ readonly class EventDispatcher implements EventDispatcherInterface
                 $listener($event);
             } catch (Throwable $e) {
                 $this->logger?->warning(
-                    \sprintf(
+                    sprintf(
                         'Something went wrong handling event: "%s" for listener: "%s" error: %s',
-                        \get_class($event),
-                        \get_class($listener),
+                        get_class($event),
+                        get_class($listener),
                         $e->getMessage()
                     )
                 );

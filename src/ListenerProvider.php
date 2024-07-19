@@ -31,8 +31,7 @@ class ListenerProvider implements ListenerProviderInterface
      * @param class-string $eventName
      * @param class-string $listener
      *
-     * @throws ReflectionException|UnexpectedValueException
-     * @throws ListenersAlreadyRegisteredException
+     * @throws ListenersAlreadyRegisteredException|ReflectionException|UnexpectedValueException
      */
     public function addEventListener(
         string $eventName,
