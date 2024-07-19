@@ -23,9 +23,8 @@ jobs:
       - name: "Install PHP"
         uses: "shivammathur/setup-php@v2"
         with:
-          coverage: "none"
           php-version: "${{ matrix.php-version }}"
-          ini-values: memory_limit=-1
+          ini-values: memory_limit=-1,extension=swow
           tools: composer:v2, cs2pr
           extensions: ds
 
@@ -44,5 +43,22 @@ jobs:
       - name: "Check coding standards"
         run: "vendor/bin/php-cs-fixer fix -v --dry-run"
 
+      - name: "Check PHPStan"
+        run: composer run-script check
+
       - name: "Run test suite"
-        run: composer run-script test:unit-github-action
+        run: composer run-script test:github-action
+        env:
+          XDEBUG_MODE: coverage
+
+      - name: "Validate test coverage"
+        uses: "5monkeys/cobertura-action@v14"
+        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+        with:
+          path: coverage/coverage.xml
+          minimum_coverage: 80
+          skip_covered: true
+          fail_below_threshold: 80
+          only_changed_files: true
+          show_class_names: true
+          show_missing: true
