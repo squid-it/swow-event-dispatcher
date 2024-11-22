@@ -29,6 +29,9 @@ jobs:
           tools: composer:v2, cs2pr
           extensions: ds
 
+      - name: "update apt"
+        run: "sudo apt update && sudo apt --yes install libcurl4-openssl-dev libssl-dev"
+
       - name: "install dev packages"
         run: "sudo apt --yes install libcurl4-openssl-dev libssl-dev"
 
