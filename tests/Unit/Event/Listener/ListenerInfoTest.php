@@ -50,7 +50,7 @@ class ListenerInfoTest extends TestCase
      */
     public function testCreateThrowsUnexpectedValueExceptionOnNonExistingEvent(): void
     {
-        /** @var class-string $nonExistingClass */
+        /** @var class-string<object> $nonExistingClass */
         $nonExistingClass = 'NonExistingClass';
 
         $this->expectException(UnexpectedValueException::class);

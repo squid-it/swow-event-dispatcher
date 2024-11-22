@@ -46,10 +46,10 @@
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^3.55",
     "league/container": "^4.2",
-    "phpstan/phpstan": "^1.11",
+    "phpstan/phpstan": "^2.0",
     "phpunit/phpunit": "^11.1",
     "squidit/php-coding-standards": "^2.0",
-    "swow/swow": "^1.5.2"
+    "swow/swow": "^1.5.3"
   },
   "suggest": {
     "ext-swow": "*"
@@ -58,17 +58,28 @@
     "psr/event-dispatcher-implementation": "1.0"
   },
   "scripts": {
-    "check": "phpstan analyse -l 8 src tests",
-    "fix": "php-cs-fixer fix && phpstan analyse -l 8 src tests",
-    "test:github-action": "phpunit --testsuite unit --coverage-cobertura coverage/coverage.xml",
+    "analyse": "phpstan analyse -l 8 src tests",
+    "cs:fix": "php-cs-fixer fix",
+    "cs:dry-run": "php-cs-fixer fix -v --dry-run",
+    "fix": [
+      "@cs:fix",
+      "@analyse",
+      "@test:unit:coverage"
+    ],
     "test:unit": "phpunit --testsuite unit",
-    "test:coverage:text": [
+    "test:unit:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --testsuite unit --coverage-cobertura coverage/coverage.xml",
+      "@test:coverage:remove-source"
+    ],
+    "test:unit:coverage-text": [
       "@putenv XDEBUG_MODE=coverage",
       "phpunit --testsuite unit --coverage-text"
     ],
-    "test:coverage:cobertura": [
-      "@putenv XDEBUG_MODE=coverage",
-      "phpunit --testsuite unit --coverage-cobertura coverage/coverage.xml"
+    "test:coverage:remove-source": [
+      "perl -0777 -i -pe \"s@<sources>.*</sources>@@sg\" ./coverage/coverage.xml",
+      "perl -i -pe 's/filename=\"/filename=\"src\\//gs' ./coverage/coverage.xml",
+      "perl -i -pe 's/ timestamp=\"\\d+\"//gs' ./coverage/coverage.xml"
     ]
   }
 }

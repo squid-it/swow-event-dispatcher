@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.96261682242991" branch-rate="0" lines-covered="103" lines-valid="107" branches-covered="0" branches-valid="0" complexity="39" version="0.4">
+  
+  <packages>
+    <package name="BufferedEventDispatcher.php" line-rate="1" branch-rate="0" complexity="8">
+      <classes>
+        <class name="SquidIT\Event\BufferedEventDispatcher" filename="src/BufferedEventDispatcher.php" line-rate="1" branch-rate="0" complexity="8">
+          <methods>
+            <method name="__construct" signature="SquidIT\Event\EventDispatcher $eventDispatcher" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="18" hits="3"/>
+              </lines>
+            </method>
+            <method name="dispatch" signature="object $event" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="31" hits="3"/>
+                <line number="33" hits="3"/>
+                <line number="35" hits="3"/>
+              </lines>
+            </method>
+            <method name="flushAllEvents" signature="" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="45" hits="2"/>
+                <line number="47" hits="2"/>
+                <line number="48" hits="2"/>
+                <line number="49" hits="2"/>
+                <line number="53" hits="2"/>
+                <line number="55" hits="2"/>
+              </lines>
+            </method>
+            <method name="flushAllEventsFor" signature="string $eventClassName" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="67" hits="1"/>
+                <line number="68" hits="1"/>
+                <line number="71" hits="1"/>
+                <line number="73" hits="1"/>
+                <line number="74" hits="1"/>
+                <line number="77" hits="1"/>
+                <line number="79" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="3"/>
+            <line number="31" hits="3"/>
+            <line number="33" hits="3"/>
+            <line number="35" hits="3"/>
+            <line number="45" hits="2"/>
+            <line number="47" hits="2"/>
+            <line number="48" hits="2"/>
+            <line number="49" hits="2"/>
+            <line number="53" hits="2"/>
+            <line number="55" hits="2"/>
+            <line number="67" hits="1"/>
+            <line number="68" hits="1"/>
+            <line number="71" hits="1"/>
+            <line number="73" hits="1"/>
+            <line number="74" hits="1"/>
+            <line number="77" hits="1"/>
+            <line number="79" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="EventDispatcher.php" line-rate="1" branch-rate="0" complexity="6">
+      <classes>
+        <class name="SquidIT\Event\EventDispatcher" filename="src/EventDispatcher.php" line-rate="1" branch-rate="0" complexity="6">
+          <methods>
+            <method name="__construct" signature="Psr\EventDispatcher\ListenerProviderInterface $listenerProvider, ?Psr\Log\LoggerInterface $logger" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="23" hits="6"/>
+              </lines>
+            </method>
+            <method name="dispatch" signature="object $event" line-rate="1" branch-rate="0" complexity="5">
+              <lines>
+                <line number="37" hits="5"/>
+                <line number="39" hits="5"/>
+                <line number="40" hits="5"/>
+                <line number="41" hits="1"/>
+                <line number="45" hits="4"/>
+                <line number="46" hits="1"/>
+                <line number="47" hits="1"/>
+                <line number="48" hits="1"/>
+                <line number="49" hits="1"/>
+                <line number="50" hits="1"/>
+                <line number="51" hits="1"/>
+                <line number="52" hits="1"/>
+                <line number="53" hits="1"/>
+                <line number="54" hits="1"/>
+                <line number="56" hits="1"/>
+                <line number="60" hits="4"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="23" hits="6"/>
+            <line number="37" hits="5"/>
+            <line number="39" hits="5"/>
+            <line number="40" hits="5"/>
+            <line number="41" hits="1"/>
+            <line number="45" hits="4"/>
+            <line number="46" hits="1"/>
+            <line number="47" hits="1"/>
+            <line number="48" hits="1"/>
+            <line number="49" hits="1"/>
+            <line number="50" hits="1"/>
+            <line number="51" hits="1"/>
+            <line number="52" hits="1"/>
+            <line number="53" hits="1"/>
+            <line number="54" hits="1"/>
+            <line number="56" hits="1"/>
+            <line number="60" hits="4"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Event\EventInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Exceptions\ListenersAlreadyRegisteredException.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Event\Exceptions\ListenersAlreadyRegisteredException" filename="src/Exceptions\ListenersAlreadyRegisteredException.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="Exceptions\NoListenersFoundException.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes>
+        <class name="SquidIT\Event\Exceptions\NoListenersFoundException" filename="src/Exceptions\NoListenersFoundException.php" line-rate="0" branch-rate="0" complexity="0">
+          <methods/>
+          <lines/>
+        </class>
+      </classes>
+    </package>
+    <package name="ListenerProvider.php" line-rate="1" branch-rate="0" complexity="12">
+      <classes>
+        <class name="SquidIT\Event\ListenerProvider" filename="src/ListenerProvider.php" line-rate="1" branch-rate="0" complexity="12">
+          <methods>
+            <method name="__construct" signature="SquidIT\Container\Mason\ContainerMasonInterface $container" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="28" hits="8"/>
+              </lines>
+            </method>
+            <method name="addEventListener" signature="string $eventName, string $listener, int $priority" line-rate="1" branch-rate="0" complexity="2">
+              <lines>
+                <line number="41" hits="7"/>
+                <line number="43" hits="7"/>
+                <line number="44" hits="1"/>
+                <line number="45" hits="1"/>
+                <line number="46" hits="1"/>
+                <line number="49" hits="7"/>
+              </lines>
+            </method>
+            <method name="getListenersForEvent" signature="object $event" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="61" hits="6"/>
+                <line number="62" hits="6"/>
+                <line number="64" hits="5"/>
+              </lines>
+            </method>
+            <method name="findExistingList" signature="object $event" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="72" hits="6"/>
+                <line number="74" hits="6"/>
+              </lines>
+            </method>
+            <method name="createListenerListForEvent" signature="object $event" line-rate="1" branch-rate="0" complexity="4">
+              <lines>
+                <line number="84" hits="6"/>
+                <line number="85" hits="6"/>
+                <line number="87" hits="6"/>
+                <line number="88" hits="5"/>
+                <line number="89" hits="5"/>
+                <line number="93" hits="6"/>
+                <line number="94" hits="1"/>
+                <line number="95" hits="1"/>
+                <line number="96" hits="1"/>
+                <line number="99" hits="5"/>
+                <line number="101" hits="5"/>
+              </lines>
+            </method>
+            <method name="createListenerQueue" signature="array $listenerList" line-rate="1" branch-rate="0" complexity="3">
+              <lines>
+                <line number="113" hits="5"/>
+                <line number="115" hits="5"/>
+                <line number="116" hits="5"/>
+                <line number="117" hits="2"/>
+                <line number="119" hits="4"/>
+                <line number="123" hits="5"/>
+                <line number="126" hits="5"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="28" hits="8"/>
+            <line number="41" hits="7"/>
+            <line number="43" hits="7"/>
+            <line number="44" hits="1"/>
+            <line number="45" hits="1"/>
+            <line number="46" hits="1"/>
+            <line number="49" hits="7"/>
+            <line number="61" hits="6"/>
+            <line number="62" hits="6"/>
+            <line number="64" hits="5"/>
+            <line number="72" hits="6"/>
+            <line number="74" hits="6"/>
+            <line number="84" hits="6"/>
+            <line number="85" hits="6"/>
+            <line number="87" hits="6"/>
+            <line number="88" hits="5"/>
+            <line number="89" hits="5"/>
+            <line number="93" hits="6"/>
+            <line number="94" hits="1"/>
+            <line number="95" hits="1"/>
+            <line number="96" hits="1"/>
+            <line number="99" hits="5"/>
+            <line number="101" hits="5"/>
+            <line number="113" hits="5"/>
+            <line number="115" hits="5"/>
+            <line number="116" hits="5"/>
+            <line number="117" hits="2"/>
+            <line number="119" hits="4"/>
+            <line number="123" hits="5"/>
+            <line number="126" hits="5"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Listener\AbstractCoroutineListener.php" line-rate="1" branch-rate="0" complexity="1">
+      <classes>
+        <class name="SquidIT\Event\Listener\AbstractCoroutineListener" filename="src/Listener\AbstractCoroutineListener.php" line-rate="1" branch-rate="0" complexity="1">
+          <methods>
+            <method name="__invoke" signature="SquidIT\Event\Event\EventInterface $event" line-rate="1" branch-rate="0" complexity="1">
+              <lines>
+                <line number="14" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="14" hits="1"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Listener\CoroutineListenerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+    <package name="Listener\ListenerInfo.php" line-rate="0.9047619047619" branch-rate="0" complexity="12">
+      <classes>
+        <class name="SquidIT\Event\Listener\ListenerInfo" filename="src/Listener\ListenerInfo.php" line-rate="0.9047619047619" branch-rate="0" complexity="12">
+          <methods>
+            <method name="__construct" signature="string $eventName, string $listenerName, int $priority" line-rate="0.9047619047619" branch-rate="0" complexity="12">
+              <lines>
+                <line number="34" hits="12"/>
+                <line number="35" hits="1"/>
+                <line number="36" hits="1"/>
+                <line number="37" hits="1"/>
+                <line number="38" hits="1"/>
+                <line number="41" hits="11"/>
+                <line number="42" hits="1"/>
+                <line number="43" hits="1"/>
+                <line number="44" hits="1"/>
+                <line number="45" hits="1"/>
+                <line number="46" hits="1"/>
+                <line number="49" hits="10"/>
+                <line number="50" hits="10"/>
+                <line number="51" hits="10"/>
+                <line number="53" hits="10"/>
+                <line number="54" hits="10"/>
+                <line number="55" hits="10"/>
+                <line number="58" hits="10"/>
+                <line number="59" hits="10"/>
+                <line number="61" hits="1"/>
+                <line number="62" hits="1"/>
+                <line number="63" hits="1"/>
+                <line number="64" hits="1"/>
+                <line number="65" hits="1"/>
+                <line number="66" hits="1"/>
+                <line number="69" hits="9"/>
+                <line number="72" hits="9"/>
+                <line number="73" hits="9"/>
+                <line number="75" hits="9"/>
+                <line number="76" hits="9"/>
+                <line number="80" hits="9"/>
+                <line number="81" hits="1"/>
+                <line number="82" hits="1"/>
+                <line number="83" hits="1"/>
+                <line number="84" hits="1"/>
+                <line number="85" hits="1"/>
+                <line number="88" hits="8"/>
+                <line number="90" hits="8"/>
+                <line number="91" hits="0"/>
+                <line number="92" hits="0"/>
+                <line number="93" hits="0"/>
+                <line number="94" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="34" hits="12"/>
+            <line number="35" hits="1"/>
+            <line number="36" hits="1"/>
+            <line number="37" hits="1"/>
+            <line number="38" hits="1"/>
+            <line number="41" hits="11"/>
+            <line number="42" hits="1"/>
+            <line number="43" hits="1"/>
+            <line number="44" hits="1"/>
+            <line number="45" hits="1"/>
+            <line number="46" hits="1"/>
+            <line number="49" hits="10"/>
+            <line number="50" hits="10"/>
+            <line number="51" hits="10"/>
+            <line number="53" hits="10"/>
+            <line number="54" hits="10"/>
+            <line number="55" hits="10"/>
+            <line number="58" hits="10"/>
+            <line number="59" hits="10"/>
+            <line number="61" hits="1"/>
+            <line number="62" hits="1"/>
+            <line number="63" hits="1"/>
+            <line number="64" hits="1"/>
+            <line number="65" hits="1"/>
+            <line number="66" hits="1"/>
+            <line number="69" hits="9"/>
+            <line number="72" hits="9"/>
+            <line number="73" hits="9"/>
+            <line number="75" hits="9"/>
+            <line number="76" hits="9"/>
+            <line number="80" hits="9"/>
+            <line number="81" hits="1"/>
+            <line number="82" hits="1"/>
+            <line number="83" hits="1"/>
+            <line number="84" hits="1"/>
+            <line number="85" hits="1"/>
+            <line number="88" hits="8"/>
+            <line number="90" hits="8"/>
+            <line number="91" hits="0"/>
+            <line number="92" hits="0"/>
+            <line number="93" hits="0"/>
+            <line number="94" hits="0"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="Listener\ListenerInterface.php" line-rate="0" branch-rate="0" complexity="0">
+      <classes/>
+    </package>
+  </packages>
+</coverage>

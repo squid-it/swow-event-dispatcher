@@ -24,7 +24,7 @@ class ListenerProvider implements ListenerProviderInterface
     private array $listenerList = [];
 
     public function __construct(
-        private readonly ContainerMasonInterface $container
+        private readonly ContainerMasonInterface $container,
     ) {}
 
     /**
@@ -36,7 +36,7 @@ class ListenerProvider implements ListenerProviderInterface
     public function addEventListener(
         string $eventName,
         string $listener,
-        int $priority = ListenerInfo::DEFAULT_PRIORITY
+        int $priority = ListenerInfo::DEFAULT_PRIORITY,
     ): void {
         $listenerEventKey = sprintf('%s.%s', $eventName, $listener);
 

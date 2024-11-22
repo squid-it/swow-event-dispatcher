@@ -62,7 +62,7 @@ class AbstractCoroutineListenerTest extends TestCase
         return new class($channel, $mSleep) extends AbstractCoroutineListener {
             public function __construct(
                 private readonly Channel $channel,
-                private readonly int $mSleep
+                private readonly int $mSleep,
             ) {}
 
             public function coroutineExecute(PaymentReceivedEvent|EventInterface $event): void
